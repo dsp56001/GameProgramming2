@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplicationPacManObs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplicationSingleton", "ConsoleApplicationSingleton\ConsoleApplicationSingleton.csproj", "{770A3FD2-FBAE-4D33-9C39-71083480315F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplicationStrategyWeapons", "ConsoleApplicationStrategyWeapons\ConsoleApplicationStrategyWeapons.csproj", "{7272E621-C7BE-41DE-9805-48D6736987F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +105,14 @@ Global
 		{770A3FD2-FBAE-4D33-9C39-71083480315F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{770A3FD2-FBAE-4D33-9C39-71083480315F}.Release|x86.ActiveCfg = Release|Any CPU
 		{770A3FD2-FBAE-4D33-9C39-71083480315F}.Release|x86.Build.0 = Release|Any CPU
+		{7272E621-C7BE-41DE-9805-48D6736987F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7272E621-C7BE-41DE-9805-48D6736987F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7272E621-C7BE-41DE-9805-48D6736987F9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7272E621-C7BE-41DE-9805-48D6736987F9}.Debug|x86.Build.0 = Debug|Any CPU
+		{7272E621-C7BE-41DE-9805-48D6736987F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7272E621-C7BE-41DE-9805-48D6736987F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7272E621-C7BE-41DE-9805-48D6736987F9}.Release|x86.ActiveCfg = Release|Any CPU
+		{7272E621-C7BE-41DE-9805-48D6736987F9}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -113,5 +123,6 @@ Global
 		{CD02E043-B1B5-47DB-B373-3A507477E848} = {806933E3-EBF9-4471-AB47-1C9459EB0144}
 		{50ED1AF5-899D-4BB0-A64E-80A4C30D1CBC} = {806933E3-EBF9-4471-AB47-1C9459EB0144}
 		{770A3FD2-FBAE-4D33-9C39-71083480315F} = {806933E3-EBF9-4471-AB47-1C9459EB0144}
+		{7272E621-C7BE-41DE-9805-48D6736987F9} = {806933E3-EBF9-4471-AB47-1C9459EB0144}
 	EndGlobalSection
 EndGlobal
