@@ -23,14 +23,14 @@ namespace ConsoleCommandWUndo
 
                 ConsoleKeyInfo keyI = AskForCommand();
                 Command command = GetCommandFromKey(keyI);
-                NewMethod(command);
+                ProcessCommand(command);
 
                 //Update display from coponent
                 Console.WriteLine(fakeComponent.About());
             }
         }
 
-        private void NewMethod(Command command)
+        private void ProcessCommand(Command command)
         {
             if (command != null)
             {

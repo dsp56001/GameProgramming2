@@ -13,15 +13,18 @@ namespace MGCommand
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        MonogamePacMan pac;
+        CommandPacMan pac;
+        CommandProcessor commandProc;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
-            pac = new MonogamePacMan(this);
+            pac = new CommandPacMan(this);
             this.Components.Add(pac);
+            commandProc = new CommandProcessor(this, pac);
+            this.Components.Add(commandProc);
         }
 
         /// <summary>

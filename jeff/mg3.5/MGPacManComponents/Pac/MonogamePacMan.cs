@@ -13,7 +13,7 @@ namespace MGPacManComponents.Pac
 {
     public class MonogamePacMan : DrawableSprite
     {
-        internal PlayerController controller { get; private set; }
+        protected PlayerController controller { get; private set; }
         internal GameConsolePacMan PacMan
         {
             get;
@@ -52,7 +52,15 @@ namespace MGPacManComponents.Pac
         {
             //Elapsed time since last update
             float time = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            UpdatePacManWithController(gameTime, time);
 
+            UpdateKeepPacManOnScreen();
+
+            base.Update(gameTime);
+        }
+
+        protected virtual void UpdatePacManWithController(GameTime gameTime, float time)
+        {
             this.controller.Update(gameTime);
 
             this.Location += ((this.controller.Direction * (time / 1000)) * Speed);      //Simple Move 
@@ -69,7 +77,10 @@ namespace MGPacManComponents.Pac
                 if (pacState != PacManState.Spawning && pacState != PacManState.SuperPacMan)
                     this.PacState = PacManState.Still;
             }
+        }
 
+        protected void UpdateKeepPacManOnScreen()
+        {
             //Keep PacMan On Screen
             if (this.Location.X > Game.GraphicsDevice.Viewport.Width - (this.spriteTexture.Width / 2))
             {
@@ -83,8 +94,6 @@ namespace MGPacManComponents.Pac
 
             if (this.Location.Y < (this.spriteTexture.Height / 2))
                 this.Location.Y = (this.spriteTexture.Height / 2);
-
-            base.Update(gameTime);
         }
     }
 }
