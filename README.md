@@ -1,4 +1,4 @@
-# GameProgramming2
+ # GameProgramming2
 Game Progrmamming 2 @IAMColumbia
 
 The jeff folder contains all my samples for Design patterns for Game Programming
@@ -8,5 +8,5 @@ The jeff folder contains all my samples for Design patterns for Game Programming
 
 ##Command Pattern
 Console Samples
-*https://github.com/dsp56001/GameProgramming2/tree/master/jeff/mg3.5/ConsoleCommand
-*https://github.com/dsp56001/GameProgramming2/tree/master/jeff/mg3.5/ConsoleCommandWUndo
+* https://github.com/dsp56001/GameProgramming2/tree/master/jeff/mg3.5/ConsoleCommand
+* https://github.com/dsp56001/GameProgramming2/tree/master/jeff/mg3.5/ConsoleCommandWUndo
