@@ -1,3 +1,4 @@
+
 # GameProgramming2
 Game Progrmamming 2 @IAMColumbia
 
@@ -16,8 +17,10 @@ The console samples demostrate simple move commands invoked by the console comma
 Console Samples
 * https://github.com/dsp56001/GameProgramming2/tree/master/jeff/mg3.5/ConsoleCommand
 * https://github.com/dsp56001/GameProgramming2/tree/master/jeff/mg3.5/ConsoleCommandWUndo
+
 Monogame Sample
 * https://github.com/dsp56001/GameProgramming2/tree/master/jeff/mg3.5/MGCommand
+
 Unity Sample
 * https://github.com/dsp56001/GameProgramming2/tree/master/jeff/unity/UnityCommand
 
@@ -25,7 +28,9 @@ Unity Sample
 
 Console Sample
 * https://github.com/dsp56001/GameProgramming2/tree/master/jeff/mg3.5/ConsoleApplicationStrategyWeapons
+
 Monogame Sample
 * https://github.com/dsp56001/GameProgramming2/tree/master/jeff/mg3.5/PacManWeaponsStrategy
+
 Unity Sample
 * 
