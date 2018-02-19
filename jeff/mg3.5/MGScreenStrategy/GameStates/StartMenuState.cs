@@ -54,7 +54,7 @@ namespace Screenz
             base.Draw(gameTime);
         }
 
-        protected override void StateChanged(object sender, EventArgs e)
+        public override void StateChanged(object sender, EventArgs e)
         {
             base.StateChanged(sender, e);
 
