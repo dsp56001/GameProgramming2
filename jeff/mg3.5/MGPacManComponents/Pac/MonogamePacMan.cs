@@ -27,8 +27,19 @@ namespace MGPacManComponents.Pac
             set
             {
                 if (this.pacState != value)
-                    this.pacState = this.PacMan.State = value;
+                {
+                    this.pacState = this.PacMan.State = value; //change PacMan state that is encasulated
+                    this.pacStateChanged();
+                }
             }
+        }
+
+        /// <summary>
+        /// Hook to allow child classes to recieve state change calls
+        /// </summary>
+        protected virtual void pacStateChanged()
+        {
+            //nothing yet
         }
 
         public MonogamePacMan(Game game)
@@ -56,9 +67,16 @@ namespace MGPacManComponents.Pac
 
             UpdateKeepPacManOnScreen();
 
+            
+
             base.Update(gameTime);
         }
 
+        public virtual void Die()
+        {
+            this.PacMan.Die();
+        }
+        
         protected virtual void UpdatePacManWithController(GameTime gameTime, float time)
         {
             this.controller.Update(gameTime);
@@ -94,6 +112,16 @@ namespace MGPacManComponents.Pac
 
             if (this.Location.Y < (this.spriteTexture.Height / 2))
                 this.Location.Y = (this.spriteTexture.Height / 2);
+        }
+
+        public virtual void PowerUp()
+        {
+            this.PacState = PacManState.SuperPacMan;
+        }
+
+        public virtual void EndPowerUp()
+        {
+            this.PacState = PacManState.EndSuperPacMan;
         }
     }
 }

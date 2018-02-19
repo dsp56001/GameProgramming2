@@ -35,7 +35,7 @@ namespace ConsoleCommand
 
         public string About()
         {
-            string about = string.Format("{0}:{1}", X, Y);
+            string about = string.Format("location: {0}:{1}", X, Y);
             return about;
         }
     }
