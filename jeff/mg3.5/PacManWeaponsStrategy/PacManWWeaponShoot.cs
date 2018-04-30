@@ -27,16 +27,16 @@ namespace PacManWeaponsStrategy
         public override void Update(GameTime gameTime)
         {
             //Shoot on Space or B
-            if ((this.controller.input.KeyboardState.HasReleasedKey(Microsoft.Xna.Framework.Input.Keys.Space))
-                || (this.controller.input.KeyboardState.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.B)))
+            if ((this.Controller.Input.KeyboardState.HasReleasedKey(Microsoft.Xna.Framework.Input.Keys.Space))
+                || (this.Controller.Input.KeyboardState.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.B)))
             {
                 AddShot();
             }
             
 
-            if (this.controller.Direction.Length() > 0)
+            if (this.Controller.Direction.Length() > 0)
             {
-                this.lastDirection = this.controller.Direction;
+                this.lastDirection = this.Controller.Direction;
                 //console.Log("PacMan.lastDirection", this.lastDirection.ToString());
             }
 

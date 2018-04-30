@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\titleIntro.png" />
+    <Content Include="Content\Transparent75Percent.png" />
     <Content Include="Content\Transparent25Percent.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>

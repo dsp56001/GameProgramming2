@@ -13,7 +13,7 @@ namespace MGPacManComponents.Pac
 {
     public class MonogamePacMan : DrawableSprite
     {
-        protected PlayerController controller { get; private set; }
+        public IPlayerController Controller { get; protected set; }
         internal GameConsolePacMan PacMan
         {
             get;
@@ -45,8 +45,13 @@ namespace MGPacManComponents.Pac
         public MonogamePacMan(Game game)
             : base(game)
         {
-            this.controller = new PlayerController(game);
+            SetupIPlayerController(game);
             PacMan = new GameConsolePacMan((GameConsole)game.Services.GetService<IGameConsole>());
+        }
+
+        protected virtual void SetupIPlayerController(Game game)
+        {
+            this.Controller = new PlayerController(game);
         }
 
         protected override void LoadContent()
@@ -79,13 +84,13 @@ namespace MGPacManComponents.Pac
         
         protected virtual void UpdatePacManWithController(GameTime gameTime, float time)
         {
-            this.controller.Update(gameTime);
+            this.Controller.Update(gameTime);
 
-            this.Location += ((this.controller.Direction * (time / 1000)) * Speed);      //Simple Move 
-            this.Rotate = this.controller.Rotate;
+            this.Location += ((this.Controller.Direction * (time / 1000)) * Speed);      //Simple Move 
+            this.Rotate = this.Controller.Rotate;
 
             //Change State based on movement
-            if (this.controller.hasInputForMoverment)
+            if (this.Controller.HasInputForMoverment)
             {
                 if (pacState != PacManState.Spawning && pacState != PacManState.SuperPacMan)
                     this.PacState = PacManState.Chomping;

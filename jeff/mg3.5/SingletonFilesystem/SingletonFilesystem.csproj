@@ -41,7 +41,6 @@
     <Compile Include="FoodManager.cs" />
     <Compile Include="FoodManagerLoadFromText.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="GameFiles\FileSystem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

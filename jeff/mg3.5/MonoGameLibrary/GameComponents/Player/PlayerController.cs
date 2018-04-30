@@ -9,13 +9,25 @@ using System.Threading.Tasks;
 
 namespace MonoGameLibrary.GameComponents.Player
 {
-    public class PlayerController : Microsoft.Xna.Framework.GameComponent
+
+    public interface IPlayerController
+    {
+        Vector2 Direction { get;  }
+        float Rotate { get; }
+        IInputHandler Input { get; }
+
+        void Update(GameTime gameTime);
+
+        bool HasInputForMoverment { get; }
+    }
+
+    public class PlayerController : Microsoft.Xna.Framework.GameComponent, IPlayerController
     {
         public Vector2 StickDir;
         public Vector2 DPadDir;
         public Vector2 KeyDir;
-        public Vector2 Direction;
-        public float Rotate;
+        public Vector2 Direction { get; protected set; }
+        public float Rotate { get; protected set; }
 
         private float rotationAngle;
         private float gamePadRotationAngle;
@@ -25,10 +37,14 @@ namespace MonoGameLibrary.GameComponents.Player
         GamePadState gamePad1State;
 
         //Player controller depends on MonogaemLibrary.Util.InputHandler
-        public InputHandler input;
+        protected IInputHandler input;
+        public IInputHandler Input
+        {
+            get { return input; }
+        }
 
         //Checks to see if there is any movement
-        public bool hasInputForMoverment
+        public bool HasInputForMoverment
         {
             get
             {
@@ -41,14 +57,18 @@ namespace MonoGameLibrary.GameComponents.Player
         {
             this.Rotate = 0;
             this.StickDir = Vector2.Zero;
+            SetupIInputHander(game);
+        }
 
+        protected virtual void SetupIInputHander(Game game)
+        {
             //get input from game service
             input = (InputHandler)game.Services.GetService(typeof(IInputHandler));
             if (input == null) //failed to get input
             {
                 //add inputHandler if it hasn't been added to the game yet
                 input = new InputHandler(game);
-                game.Components.Add(input);
+                game.Components.Add((InputHandler)input);
             }
         }
 
@@ -62,7 +82,7 @@ namespace MonoGameLibrary.GameComponents.Player
             HandleGamePad();    //Get input from gampads
 
             HandleKeyboard();   //Get input from keyboard
-
+            
             #region SumAllInput
             this.Direction = this.KeyDir + this.DPadDir + this.StickDir;
             if (this.Direction.Length() > 0)
@@ -82,8 +102,14 @@ namespace MonoGameLibrary.GameComponents.Player
             }
             #endregion
 
+            
+
             base.Update(gameTime);
         }
+
+        Vector2 touchDir;
+
+        
 
         private void HandleKeyboard()
         {

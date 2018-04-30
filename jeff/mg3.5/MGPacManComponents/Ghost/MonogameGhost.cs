@@ -34,6 +34,9 @@ namespace MGPacManComponents.Ghost
         public Vector2 StartLoc;
 
         Random r;
+        float turnAmount; //turn anount for chasing pacman
+
+        bool initalized; //make sure we don't call initialize twice unless intended
 
         public MonogameGhost(Game game, MonogamePacMan pacman)
             : base(game)
@@ -65,10 +68,12 @@ namespace MGPacManComponents.Ghost
             base.Initialize();
 
             // TODO: Add your initialization code here
-
-            this.Origin = new Vector2(this.spriteTexture.Width / 2, this.spriteTexture.Height / 2);
-            this.Location = this.GetRandLocation();
-
+            if (!initalized)
+            {
+                this.Origin = new Vector2(this.spriteTexture.Width / 2, this.spriteTexture.Height / 2);
+                this.Location = this.GetRandLocation();
+                initalized = true;
+            }
         }
 
         protected override void LoadContent()
@@ -81,20 +86,22 @@ namespace MGPacManComponents.Ghost
             this.Direction = new Vector2(0, 1);
             this.Location = StartLoc;
             this.Speed = 50.0f;
-
+            this.turnAmount = .04f;
             base.LoadContent();
 
             this.Origin = new Vector2(this.spriteTexture.Width / 2, this.spriteTexture.Height / 2);
 
         }
 
+
+        
         /// <summary>
         /// Allows the game component to update itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public override void Update(GameTime gameTime)
         {
-            float turnAmount = .04f;
+            
        
             switch (this.ghost.State)
             {
@@ -154,12 +161,16 @@ namespace MGPacManComponents.Ghost
             }
         }
 
+
+        Vector2 normD, p;
         private void UpdateGhostRoving()
         {
-            
+            //If Ghost is stopped move on
+            if (this.Direction.Length() == 0) return;
             //check if ghost can see pacman
-            Vector2 normD = Vector2.Normalize(this.Direction);
-            Vector2 p = new Vector2(this.Location.X, this.Location.Y);
+            normD = Vector2.Normalize(this.Direction);
+            
+            p = new Vector2(this.Location.X, this.Location.Y);
             while (p.X < this.Game.GraphicsDevice.Viewport.Width &&
                   p.X > 0 &&
                   p.Y < this.Game.GraphicsDevice.Viewport.Height &&

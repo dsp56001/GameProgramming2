@@ -1,7 +1,7 @@
 ﻿using MGPacManComponents.Food;
 using MGPacManComponents.Pac;
 using Microsoft.Xna.Framework;
-using MonogameLibrary.GameFiles;
+using MonoGameLibrary.GameFiles;
 using MonoGameLibrary.Util;
 using System;
 using System.Collections.Generic;

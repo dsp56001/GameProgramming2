@@ -142,6 +142,7 @@ namespace MonoGameLibrary.Sprite
                              new Rectangle(0, 0, (int)(this.spriteTexture.Width * Scale),
                                  (int)(this.spriteTexture.Height * Scale)),
                              spriteTransform);
+                this.updateRectangeForDrawing();
             }
         }
 

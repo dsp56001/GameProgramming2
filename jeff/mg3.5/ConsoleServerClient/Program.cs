@@ -19,7 +19,7 @@ namespace ConsoleServerClient
             client.Initialize();
             Console.WriteLine("client: conected ");
 
-            UpdateClient();
+            //UpdateClient();
 
             string stringToServer = "";
             while (stringToServer != "quit")
