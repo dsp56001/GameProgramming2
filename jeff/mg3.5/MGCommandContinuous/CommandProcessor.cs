@@ -22,7 +22,7 @@ namespace MGCommand
         KeyMap keyMap;
 
         //List of previously processed commands
-        Stack<ICommand> Commands = new Stack<ICommand>();
+        Stack<ICommand> Commands;
 
         Dictionary<string, GameComponent> componentMap;
 
@@ -32,6 +32,8 @@ namespace MGCommand
 
         public CommandProcessor(Game game, GameComponent pac) : base (game)
         {
+            Commands = new Stack<ICommand>();
+
             input = (InputHandler)game.Services.GetService<IInputHandler>();
             if(input == null)
             {

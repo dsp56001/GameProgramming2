@@ -20,16 +20,16 @@ namespace MGCommand
         KeyMap keyMap;
 
         //List of previously processed commands
-        Stack<ICommand> Commands = new Stack<ICommand>();
+        Stack<ICommand> Commands;
 
         Dictionary<string, GameComponent> componentMap;
-
-        
 
         public object CommandWUndo { get; private set; }
 
         public CommandProcessor(Game game) : base (game)
         {
+            Commands = new Stack<ICommand>();
+
             input = (InputHandler)game.Services.GetService<IInputHandler>();
             if(input == null)
             {
@@ -44,8 +44,6 @@ namespace MGCommand
             }
             keyMap = new KeyMap();
             componentMap = new Dictionary<string, GameComponent>(); //TODO
-
-
             
         }
 
