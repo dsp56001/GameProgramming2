@@ -7,7 +7,11 @@ namespace ConsoleCommand
     /// </summary>
     public class GameComponent
     {
-        int X, Y;
+
+        protected int _X, _Y;
+
+        public int X { get { return _X; } protected set { _X = value; } }
+        public int Y { get { return _Y; } protected set { _Y = value; } }
 
         internal void MoveRight()
         {
