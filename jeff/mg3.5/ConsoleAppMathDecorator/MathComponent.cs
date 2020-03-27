@@ -5,13 +5,13 @@ using System.Text;
 namespace DecoratorSample
 {
     
-    interface IMathComponent
+    public interface IMathComponent
     {
         int Calculate(int input);
     }
-    
-    abstract class MathComponent : IMathComponent
-    {
+
+    public abstract class MathComponent : IMathComponent
+    {   
         public virtual int Calculate(int input)
         {
             return input;
@@ -19,7 +19,7 @@ namespace DecoratorSample
 
     }
 
-    class AddOne : MathComponent
+    public class AddOne : MathComponent
     {
         public override int Calculate(int input)
         {
@@ -27,7 +27,7 @@ namespace DecoratorSample
         }
     }
 
-    class AddTwo : MathComponent
+    public class AddTwo : MathComponent
     {
         public override int Calculate(int input)
         {
@@ -35,7 +35,7 @@ namespace DecoratorSample
         }
     }
 
-    class AddThree : MathComponent
+    public class AddThree : MathComponent
     {
         public override int Calculate(int input)
         {

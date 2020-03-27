@@ -28,7 +28,7 @@ namespace MGAudioWCommandSingleton
         Song currentSong;
         
 
-        private string outText;
+        //private string outText;
 
         public AudioCommandProcessor(Game game) : base(game)
         {

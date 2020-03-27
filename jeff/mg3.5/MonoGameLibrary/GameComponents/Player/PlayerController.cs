@@ -107,7 +107,7 @@ namespace MonoGameLibrary.GameComponents.Player
             base.Update(gameTime);
         }
 
-        Vector2 touchDir;
+        //Vector2 touchDir;
 
         
 

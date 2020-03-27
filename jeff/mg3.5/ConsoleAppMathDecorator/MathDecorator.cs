@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DecoratorSample
 {
-    class MathDecorator : IMathComponent
+    public class MathDecorator : IMathComponent
     {
         List<IMathComponent> Maths;
 
@@ -22,6 +22,11 @@ namespace DecoratorSample
                 solution = item.Calculate(solution);
             }
             return solution;
+        }
+
+        public int Calculate()
+        {
+            return this.Calculate(solution);
         }
 
         public void AddComponent(IMathComponent compenent)
