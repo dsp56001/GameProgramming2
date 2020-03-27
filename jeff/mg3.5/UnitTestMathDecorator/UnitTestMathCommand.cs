@@ -71,8 +71,8 @@ namespace UnitTestMathDecorator
             md.AddComponent(a1);
             md.AddComponent(a2);
             md.AddComponent(a3);
+            md.RemoveComponetn(a1);
             md.RemoveComponetn(a2);
-            md.RemoveComponetn(a3);
             addThreeResult = md.Calculate();
 
             //Assert
