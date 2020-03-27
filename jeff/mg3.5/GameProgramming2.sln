@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2024
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameProgramming2", "GameProgramming2\GameProgramming2.csproj", "{140FFEB1-8BDB-4E3F-AFF3-3F2A03227200}"
 EndProject
@@ -61,9 +61,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppJSONandXML", "Con
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MGTouch", "MGTouch\MGTouch.csproj", "{3127DC17-F251-4524-B000-B04A254E7D67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProjectCommand", "UnitTestProjectCommand\UnitTestProjectCommand.csproj", "{C6418E87-146C-4809-A1CE-D6D4F07A9750}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestProjectCommand", "UnitTestProjectCommand\UnitTestProjectCommand.csproj", "{C6418E87-146C-4809-A1CE-D6D4F07A9750}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestCommandWUndo", "UnitTestCommandWUndo\UnitTestCommandWUndo.csproj", "{AAB83E1E-8F83-404C-99BF-F0992B8D24B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestCommandWUndo", "UnitTestCommandWUndo\UnitTestCommandWUndo.csproj", "{AAB83E1E-8F83-404C-99BF-F0992B8D24B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppMathDecorator", "ConsoleAppMathDecorator\ConsoleAppMathDecorator.csproj", "{B5ACD4A8-8E0B-4D86-A263-F95A586F6CFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestMathDecorator", "UnitTestMathDecorator\UnitTestMathDecorator.csproj", "{EE9699BD-9B5B-4D2C-B807-17011A6E2B31}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -272,6 +276,22 @@ Global
 		{AAB83E1E-8F83-404C-99BF-F0992B8D24B5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AAB83E1E-8F83-404C-99BF-F0992B8D24B5}.Release|x86.ActiveCfg = Release|Any CPU
 		{AAB83E1E-8F83-404C-99BF-F0992B8D24B5}.Release|x86.Build.0 = Release|Any CPU
+		{B5ACD4A8-8E0B-4D86-A263-F95A586F6CFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5ACD4A8-8E0B-4D86-A263-F95A586F6CFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5ACD4A8-8E0B-4D86-A263-F95A586F6CFB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B5ACD4A8-8E0B-4D86-A263-F95A586F6CFB}.Debug|x86.Build.0 = Debug|Any CPU
+		{B5ACD4A8-8E0B-4D86-A263-F95A586F6CFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5ACD4A8-8E0B-4D86-A263-F95A586F6CFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5ACD4A8-8E0B-4D86-A263-F95A586F6CFB}.Release|x86.ActiveCfg = Release|Any CPU
+		{B5ACD4A8-8E0B-4D86-A263-F95A586F6CFB}.Release|x86.Build.0 = Release|Any CPU
+		{EE9699BD-9B5B-4D2C-B807-17011A6E2B31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE9699BD-9B5B-4D2C-B807-17011A6E2B31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE9699BD-9B5B-4D2C-B807-17011A6E2B31}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EE9699BD-9B5B-4D2C-B807-17011A6E2B31}.Debug|x86.Build.0 = Debug|Any CPU
+		{EE9699BD-9B5B-4D2C-B807-17011A6E2B31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE9699BD-9B5B-4D2C-B807-17011A6E2B31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE9699BD-9B5B-4D2C-B807-17011A6E2B31}.Release|x86.ActiveCfg = Release|Any CPU
+		{EE9699BD-9B5B-4D2C-B807-17011A6E2B31}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -291,6 +311,8 @@ Global
 		{A81C9B85-8165-4710-84F8-B89DD5A7A9E8} = {806933E3-EBF9-4471-AB47-1C9459EB0144}
 		{C6418E87-146C-4809-A1CE-D6D4F07A9750} = {806933E3-EBF9-4471-AB47-1C9459EB0144}
 		{AAB83E1E-8F83-404C-99BF-F0992B8D24B5} = {806933E3-EBF9-4471-AB47-1C9459EB0144}
+		{B5ACD4A8-8E0B-4D86-A263-F95A586F6CFB} = {806933E3-EBF9-4471-AB47-1C9459EB0144}
+		{EE9699BD-9B5B-4D2C-B807-17011A6E2B31} = {806933E3-EBF9-4471-AB47-1C9459EB0144}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0E1369E1-C964-4E34-8090-CB1E1487A1F0}
