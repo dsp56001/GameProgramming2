@@ -4,14 +4,14 @@ using DecoratorSample;
 namespace UnitTestMathDecorator
 {
     [TestClass]
-    public class UnitTestMathCommand
+    public class UnitTestMathDecorator
     {
         MathDecorator md;
         IMathComponent a1;
         IMathComponent a2;
         IMathComponent a3;
 
-        public UnitTestMathCommand()
+        public UnitTestMathDecorator()
         {
             md = new MathDecorator();
             a1 = new AddOne();
@@ -22,7 +22,7 @@ namespace UnitTestMathDecorator
 
 
         [TestMethod]
-        public void TestMathCommandAddComponent()
+        public void TestMathAddComponent()
         {
             //Arrange
             int addOneResult, addTwoResult, addThreeResult;
@@ -48,7 +48,7 @@ namespace UnitTestMathDecorator
         }
 
         [TestMethod]
-        public void TestMathCommandAddRemoveComponent()
+        public void TestMathAddRemoveComponent()
         {
             //Arrange
             int addOneResult, addTwoResult, addThreeResult;
@@ -60,19 +60,19 @@ namespace UnitTestMathDecorator
             md = new MathDecorator();
             md.AddComponent(a1);
             md.AddComponent(a1);
-            md.RemoveComponetn(a1);
+            md.RemoveComponent(a1);
             addOneResult = md.Calculate();
             md = new MathDecorator();
             md.AddComponent(a1);
-            md.RemoveComponetn(a1);
+            md.RemoveComponent(a1);
             md.AddComponent(a2);
             addTwoResult = md.Calculate();
             md = new MathDecorator();
             md.AddComponent(a1);
             md.AddComponent(a2);
             md.AddComponent(a3);
-            md.RemoveComponetn(a1);
-            md.RemoveComponetn(a2);
+            md.RemoveComponent(a1);
+            md.RemoveComponent(a2);
             addThreeResult = md.Calculate();
 
             //Assert
@@ -82,7 +82,7 @@ namespace UnitTestMathDecorator
         }
 
         [TestMethod]
-        public void TestMathCommandAddMultipleComponent()
+        public void TestMathAddMultipleComponent()
         {
             //Arrange
             int addAllResult;

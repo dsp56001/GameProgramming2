@@ -15,18 +15,18 @@ namespace DecoratorSample
             Maths = new List<IMathComponent>();
         }
 
-        public int Calculate(int input)
+        public int decoratorCalculate(int input)
         {
             foreach (var item in Maths)
             {
-                solution = item.Calculate(solution);
+                solution += item.Calculate();
             }
             return solution;
         }
 
         public int Calculate()
         {
-            return this.Calculate(solution);
+            return this.decoratorCalculate(solution);
         }
 
         public void AddComponent(IMathComponent compenent)
@@ -34,7 +34,7 @@ namespace DecoratorSample
             this.Maths.Add(compenent);
         }
 
-        public void RemoveComponetn(IMathComponent component)
+        public void RemoveComponent(IMathComponent component)
         {
             this.Maths.Remove(component);
         }

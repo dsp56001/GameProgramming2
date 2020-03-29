@@ -7,39 +7,41 @@ namespace DecoratorSample
     
     public interface IMathComponent
     {
-        int Calculate(int input);
+        int Calculate();
     }
 
     public abstract class MathComponent : IMathComponent
     {   
-        public virtual int Calculate(int input)
+        
+        
+        public virtual int Calculate()
         {
-            return input;
+            return 0;
         }
 
     }
 
     public class AddOne : MathComponent
     {
-        public override int Calculate(int input)
+        public override int Calculate()
         {
-            return base.Calculate(input) + 1;
+            return base.Calculate() + 1;
         }
     }
 
     public class AddTwo : MathComponent
     {
-        public override int Calculate(int input)
+        public override int Calculate()
         {
-            return base.Calculate(input) + 2;
+            return base.Calculate() + 2;
         }
     }
 
     public class AddThree : MathComponent
     {
-        public override int Calculate(int input)
+        public override int Calculate()
         {
-            return base.Calculate(input) + 3;
+            return base.Calculate() + 3;
         }
     }
 }

@@ -25,7 +25,7 @@ namespace MGScreenStrategy.GameStates
         public GameDialogStatus DialogStatus;
         public Color BackGrongColor, TextColor;
 
-        //HelpDiaglogState helpDialog;
+        HelpDiaglogState helpDialog;
 
         public HelpDiaglogState(Game game, IGameStateManager manager, string Text)
             : base(game, manager)
@@ -37,7 +37,7 @@ namespace MGScreenStrategy.GameStates
             this.BackGrongColor = Color.DarkRed;
             this.TextColor = Color.BlanchedAlmond;
 
-            helpDialog = new HelpDiaglogState();   
+            helpDialog = new HelpDiaglogState(game, manager, "help");   
         }
 
 
@@ -55,7 +55,7 @@ namespace MGScreenStrategy.GameStates
                 GameManager.PopState();
 
             if (Input.WasPressed(0, InputHandler.ButtonType.A, Keys.H))
-                GameManager.PushState(helpDialog);
+                GameManager.PushState( helpDialog);
 
 
             base.Update(gameTime);
