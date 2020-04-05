@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace MGDecorator
 {
-    class DecoMonogamePacManTest : DecoratableSprite
+    class DecoMonogamePacMan : DecoratableSprite
     {
         protected PlayerController controller { get; private set; }
         internal GameConsolePacMan PacMan
@@ -44,7 +44,7 @@ namespace MGDecorator
             //nothing yet
         }
 
-        public DecoMonogamePacManTest(Game game)
+        public DecoMonogamePacMan(Game game)
             : base(game)
         {
             this.controller = new PlayerController(game);

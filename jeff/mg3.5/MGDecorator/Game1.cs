@@ -12,17 +12,17 @@ namespace MGDecorator
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        DecoMonogamePacManTest pacman;
+        DecoDemoPacMan pacman;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
-            pacman = new DecoMonogamePacManTest(this);
+            pacman = new DecoDemoPacMan (this);
 
             //pacman.AddDecorator(new ScaleDecorator(this, pacman, 2));
-            pacman.AddDecorator(new SineScaleDecorator(this, pacman, 2));
+            //pacman.AddDecorator(new SineScaleDecorator(this, pacman, 2));
             //pacman.AddDecorator(new DropShadowDecorator(this, pacman, new Vector2(1, 1)));
             //pacman.AddDecorator(new DropShadowDecorator(this, pacman, new Vector2(-3, 3)));
             this.Components.Add(pacman);

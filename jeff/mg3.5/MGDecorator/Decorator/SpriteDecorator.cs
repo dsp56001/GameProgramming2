@@ -51,6 +51,34 @@ namespace MGDecorator.Decorator
             }
         }
 
+        internal virtual void RemoveDecorator(SpriteDecorator spriteDecorator)
+        {
+            if(this.decorator is EmptySpriteDecorator)
+            {
+                //nothing
+            }
+            else
+            {
+                if(this.decorator.GetType() == spriteDecorator.GetType())
+                {
+                    this.decorator = this.decorator.decorator;
+                }
+                else
+                {
+                    this.decorator.RemoveDecorator(spriteDecorator);
+                }
+                
+            }
+        }
+
+        internal virtual bool HasDecorator(SpriteDecorator spriteDecorator)
+        {
+            if (this is EmptySpriteDecorator) return false;
+            if (this.GetType() == spriteDecorator.GetType())
+                return true;
+            return this.decorator.HasDecorator(spriteDecorator);
+        }
+
         protected override void LoadContent()
         {
             base.LoadContent();

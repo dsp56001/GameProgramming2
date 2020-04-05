@@ -6,7 +6,7 @@ namespace DecoratorSample
 {
     public class MathDecorator : IMathComponent
     {
-        List<IMathComponent> Maths;
+        List<IMathComponent> Maths; //UK 
 
         int solution;
 

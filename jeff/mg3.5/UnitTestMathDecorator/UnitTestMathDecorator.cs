@@ -34,7 +34,7 @@ namespace UnitTestMathDecorator
             md = new MathDecorator();
             md.AddComponent(a1);
             addOneResult = md.Calculate();
-            md = new MathDecorator();
+            md = new MathDecorator();  //reset
             md.AddComponent(a2);
             addTwoResult = md.Calculate();
             md = new MathDecorator();

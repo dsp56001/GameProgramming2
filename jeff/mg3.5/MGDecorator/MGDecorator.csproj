@@ -41,7 +41,8 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DecoMonogamePacManTest.cs" />
+    <Compile Include="DecoDemoPacMan.cs" />
+    <Compile Include="DecoMonogamePacMan.cs" />
     <Compile Include="Decorator\DecoratableSprite.cs" />
     <Compile Include="Decorator\EmptySpriteDecorator.cs" />
     <Compile Include="Decorator\SpriteDecorator.cs" />

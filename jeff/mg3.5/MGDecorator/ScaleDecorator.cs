@@ -11,12 +11,8 @@ using System.Threading.Tasks;
 namespace MGDecorator
 {
 
-    
-
     class ScaleDecorator : SpriteDecorator
     {
-
-        
         protected Sprite sprite;
 
         protected float scaleMultiplier, originalScale;
@@ -25,9 +21,8 @@ namespace MGDecorator
         {
             this.sprite = sprite;
             this.scaleMultiplier = scale;
+            //this.originalScale = this.sprite.Scale;
         }
-
-        
 
         protected override void LoadContent()
         {
@@ -41,11 +36,23 @@ namespace MGDecorator
             base.Update(gameTime);
         }
 
+        internal override void RemoveDecorator(SpriteDecorator spriteDecorator)
+        {
+            
+            base.RemoveDecorator(spriteDecorator);
+        }
+
+        internal override void AddDecorator(SpriteDecorator spriteDecorator)
+        {
+            base.AddDecorator(spriteDecorator);
+        }
+
         public override void Draw(GameTime gameTime)
         {
-            this.sprite.Scale *= this.scaleMultiplier;
+            
+            this.sprite.Scale *= this.scaleMultiplier; //non destructve we will multiply on each addition
             base.Draw(gameTime);
-            this.sprite.Scale = this.originalScale;
+            this.sprite.Scale = this.originalScale; //and set it back
         }
 
         

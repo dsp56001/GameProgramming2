@@ -31,6 +31,16 @@ namespace MGDecorator.Decorator
             }
         }
 
+        public virtual void RemoveDecorator(SpriteDecorator spriteDecorator)
+        {
+             this.decorator.RemoveDecorator(spriteDecorator);
+        }
+
+        public virtual bool HasDecorator(SpriteDecorator spriteDecorator)
+        {
+            return this.decorator.HasDecorator(spriteDecorator);
+        }
+
         public override void Initialize()
         {
             base.Initialize();
