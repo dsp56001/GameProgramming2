@@ -36,6 +36,12 @@ namespace MGDecorator
             base.LoadContent();
         }
 
+        internal override void AddDecorator(SpriteDecorator spriteDecorator)
+        {
+            this.LoadContent();
+            base.AddDecorator(spriteDecorator);
+        }
+
         public override void Draw(GameTime gameTime)
         {
             sb.Begin();

@@ -18,7 +18,7 @@ namespace MGDecorator.Decorator
 
     public abstract class SpriteDecorator : DrawableGameComponent, ISpriteDecorator
     {
-        SpriteDecorator decorator;
+        public SpriteDecorator decorator;
         
         public SpriteDecorator(Game game) : base(game)
         {
@@ -44,6 +44,7 @@ namespace MGDecorator.Decorator
             if (this.decorator is EmptySpriteDecorator)
             {
                 this.decorator = spriteDecorator;
+                //this.decorator.Initialize();
             }
             else
             {

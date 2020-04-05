@@ -24,6 +24,7 @@ namespace MGDecorator.Decorator
             {
                 this.decorator = spriteDecorator;
                 
+                
             }
             else
             {
@@ -33,7 +34,22 @@ namespace MGDecorator.Decorator
 
         public virtual void RemoveDecorator(SpriteDecorator spriteDecorator)
         {
-             this.decorator.RemoveDecorator(spriteDecorator);
+            if (this.decorator is EmptySpriteDecorator)
+            {
+                //nothing
+            }
+            else
+            {
+                if (this.decorator.GetType() == spriteDecorator.GetType())
+                {
+                    this.decorator = this.decorator.decorator;
+                }
+                else
+                {
+                    this.decorator.RemoveDecorator(spriteDecorator);
+                }
+
+            }
         }
 
         public virtual bool HasDecorator(SpriteDecorator spriteDecorator)

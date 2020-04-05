@@ -32,8 +32,8 @@ namespace MGDecorator
         {
             sineTime += gameTime.ElapsedGameTime.Milliseconds;
             this.scaleMultiplier = this.scaleMultiplier + (float)Math.Cos(sineTime);
-            console.Log("sineTime", sineTime.ToString());
-            console.Log("scaleMultiplier", scaleMultiplier.ToString());
+            //console.Log("sineTime", sineTime.ToString());
+            //console.Log("scaleMultiplier", scaleMultiplier.ToString());
             base.Update(gameTime);
         }
     }
