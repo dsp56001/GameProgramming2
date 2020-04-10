@@ -20,6 +20,14 @@ namespace JSONOjbectMap
             ShowDebugLog = true;
         }
 
+        public void SaveToJSON( string jsonFileName, string Path, string json)
+        {
+            var sr = File.CreateText(Path + jsonFileName);
+            sr.Write(json);
+            sr.Close();
+            
+        }
+
         public T LoadFromJSON(string jsonFile, string Path)
         {
             //string Path = System.AppDomain.CurrentDomain.DynamicDirectory;

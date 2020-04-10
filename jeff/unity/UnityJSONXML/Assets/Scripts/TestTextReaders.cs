@@ -38,6 +38,11 @@ public class TestTextReaders : MonoBehaviour
         {
             manager.State = GhostManager.GhostManagerState.StartAuto;
         }
+
+        if (Input.GetKeyUp(KeyCode.S))
+        {
+            manager.State = GhostManager.GhostManagerState.Save;
+        }
     }
 
     

@@ -17,6 +17,12 @@ public class GhostSprite : MonoBehaviour {
 	
 	protected Vector3 viewPoint;
 
+	public Vector3 Direction
+	{
+		get { return this.ghost.Direction; }
+		set { this.ghost.Direction = value; }
+	}
+
     void Awake()
     {
         this.ghost = new Ghost();

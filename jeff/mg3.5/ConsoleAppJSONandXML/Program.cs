@@ -23,6 +23,7 @@ namespace ConsoleAppJSONandXML
 
             //convert to JSON using Newtonsoft
             json = JsonConvert.SerializeObject(fido, Formatting.Indented);
+            
 
             //convert XML using XmlSerializer
             XmlSerializer serializer =
@@ -35,8 +36,8 @@ namespace ConsoleAppJSONandXML
             xml = System.Text.Encoding.UTF8.GetString(utf8EncodedXml); // back to string
 
             //Write values to console
-            Console.WriteLine(json);
-            Console.WriteLine(xml);
+            Console.WriteLine($"Dog json:\n{json}");
+            Console.WriteLine($"Dog xml\n: {xml}");
 
             //Json convert back
             var jsonDog = JsonConvert.DeserializeObject<Dog>(json);
@@ -57,7 +58,6 @@ namespace ConsoleAppJSONandXML
 
         }
 
-        
     }
 
     

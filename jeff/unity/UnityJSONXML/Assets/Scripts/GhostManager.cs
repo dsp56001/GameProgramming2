@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEditor;
 using UnityEngine;
 
 namespace JSONOjbectMap
@@ -87,16 +88,15 @@ namespace JSONOjbectMap
                     this.State = GhostManagerState.Loaded;
                     break;
                 case GhostManagerState.Loaded:
-                    //CheckForEdit();
-                    //CheckForLoad();
+                    
                     //nothing
                     break;
                 case GhostManagerState.Setup:
                 case GhostManagerState.SetupFinished:
-                    //CheckForEdit();
+                    
                     break;
                 case GhostManagerState.Editing:
-                    //CheckForSave();
+                    
                     break;
                 case GhostManagerState.Save:
                     
@@ -104,6 +104,8 @@ namespace JSONOjbectMap
                     break;
                 case GhostManagerState.Saving:
                     //Save
+                    SaveTOJSON();
+                    //SaveTOXML();
                     this.State = GhostManagerState.Saved;
                     break;
                 case GhostManagerState.Saved:
@@ -113,39 +115,34 @@ namespace JSONOjbectMap
             
         }
 
-
-        private void CheckForLoad()
+        private void SaveTOJSON()
         {
-#if DEBUG
-            //if (input.WasKeyPressed(Microsoft.Xna.Framework.Input.Keys.L))
-            //{
-                this.State = GhostManagerState.Loading;
-            //}
-
+            Sprites sprites = new Sprites();
+            sprites.sprites = new List<Sprite>();
+            Sprite s = new Sprite();
+            s.Direction = new Location();
+            s.Location = new Location();
+            foreach (GhostSprite gs in Ghosts)
+            {
+                s = new Sprite();
+                s.Direction = new Location();
+                s.Location = new Location();
+                s.Direction.X = gs.Direction.x; ;
+                s.Direction.Y = gs.Direction.y;
+                s.Location.X = gs.transform.position.x;
+                s.Location.Y = gs.transform.position.y;
+                s.Speed = gs.Speed;
+                sprites.sprites.Add(s);
+            }
+            var json = JsonUtility.ToJson(sprites, true);
+            //write
+            jsonGhostParser.SaveToJSON("JSONMapSave.json", "Assets\\Resources\\", json);
         }
-#endif
 
-        private void CheckForSave()
+        [Serializable]
+        private class Sprites
         {
-#if DEBUG
-            //if (input.WasKeyPressed(Microsoft.Xna.Framework.Input.Keys.S))
-            //{
-                this.State = GhostManagerState.Save;
-            //}
-#endif
-        }
-
-        /// <summary>
-        /// Check to change to edit mode
-        /// </summary>
-        private void CheckForEdit()
-        {
-#if DEBUG
-            //if (input.WasKeyPressed(Microsoft.Xna.Framework.Input.Keys.E))
-            //{
-                this.State = GhostManagerState.Editing;
-            //}
-#endif
+            public List<Sprite> sprites;
         }
 
         protected GameObject getSpawnObject()
@@ -164,6 +161,8 @@ namespace JSONOjbectMap
                 gs = go.GetComponent<GhostSprite>();
                 gs.Speed = s.Speed;
                 gs.PacMan = PacMan;
+                gs.Direction = new Vector3(s.Direction.X, s.Direction.Y);
+                
                 gs.gameObject.transform.position = new Vector2(s.Location.X, s.Location.Y);
             }
             return gs;
@@ -194,7 +193,6 @@ namespace JSONOjbectMap
                 this.Ghosts.Add(gs);
             
             }
-            
         }
 
         private void SetupGhostsXML()
@@ -239,7 +237,7 @@ namespace JSONOjbectMap
         {
             public Location Location;
             public Location Direction;
-            public int Speed;
+            public float Speed;
         }
         [System.Serializable]
         public class Location
