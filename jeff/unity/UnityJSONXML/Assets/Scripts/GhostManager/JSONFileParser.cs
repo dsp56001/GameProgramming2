@@ -7,11 +7,8 @@ using UnityEngine;
 
 namespace JSONOjbectMap
 {
-
-
-    class JSONFileParser<T> 
+    public class JSONFileParser<T> 
     {
-        
         public bool ShowDebugLog { get; set; }
 
         public JSONFileParser()
@@ -28,10 +25,13 @@ namespace JSONOjbectMap
             
         }
 
+        public string Json { get { return json; } }
+        string json;
+
         public T LoadFromJSON(string jsonFile, string Path)
         {
             //string Path = System.AppDomain.CurrentDomain.DynamicDirectory;
-            string json = this.ReadTextFile(jsonFile, Path);
+            json = this.ReadTextFile(jsonFile, Path);
 #if DEBUG
             if(ShowDebugLog)
             {

@@ -13,7 +13,7 @@ public class Pool : MonoBehaviour {
         CreateObjectPools();
 	}
 
-    private void CreateObjectPools()
+    public void CreateObjectPools()
     {
         ObjectPoolingManager.Instance.PoolGameObject = this.gameObject;
         ObjectPoolingManager.Instance.CreatePool(GhostPrefab, this.IntialPoolSize, 5, false);

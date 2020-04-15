@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace JSONOjbectMap
 {
-    class XMLFileParser<T>
+    public class XMLFileParser<T>
     {
         
         public bool ShowDebugLog { get; set; }

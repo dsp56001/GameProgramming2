@@ -6,7 +6,7 @@ using JSONOjbectMap;
 public class TestTextReaders : MonoBehaviour
 {
 
-    GhostManager manager;
+    public GhostManager Manager;
 
     public GameObject PacMan;
     
@@ -20,28 +20,22 @@ public class TestTextReaders : MonoBehaviour
     {
 
 
-        //Console.GameConsoleWrite("TestTextReaders: Start Called");
-
-        manager = new GhostManager(PacMan);
-
-        //simple test
-        
-
+        Manager = new GhostManager(PacMan);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        manager.Update();
+        Manager.Update();
         if(Input.GetKeyUp(KeyCode.A))
         {
-            manager.State = GhostManager.GhostManagerState.StartAuto;
+            Manager.State = GhostManager.GhostManagerState.StartAuto;
         }
 
         if (Input.GetKeyUp(KeyCode.S))
         {
-            manager.State = GhostManager.GhostManagerState.Save;
+            Manager.State = GhostManager.GhostManagerState.Save;
         }
     }
 

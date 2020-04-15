@@ -13,8 +13,8 @@ namespace JSONOjbectMap
     public class GhostManager 
     {
 
-        JSONFileParser<JSONDTOMap> jsonGhostParser;
-        XMLFileParser<XMLDTOMap> xmlGhostParser;
+        public JSONFileParser<JSONDTOMap> jsonGhostParser;
+        public XMLFileParser<XMLDTOMap> xmlGhostParser;
         public List<GhostSprite> Ghosts;
         //List<MonogameGhost> ghostsToRemove;
         JSONDTOMap JSONmap;
@@ -81,10 +81,7 @@ namespace JSONOjbectMap
                     this.State = GhostManagerState.Loading;
                     break;
                 case GhostManagerState.Loading:
-                    LoadGhostsFromJSON();
-                    SetupGhostsJSON();
-                    LoadGhostsFromXML();
-                    SetupGhostsXML();
+                    this.Initialize();
                     this.State = GhostManagerState.Loaded;
                     break;
                 case GhostManagerState.Loaded:
@@ -224,6 +221,8 @@ namespace JSONOjbectMap
             this.State = GhostManagerState.Loaded;
         }
 
+
+        //UNITY don't newtonsoft 
         
         #region JSON DTO Classes
         [System.Serializable]

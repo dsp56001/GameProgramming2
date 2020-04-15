@@ -651,9 +651,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{02A91B69-FFDC-9044-45B7-253B3DE99BB4}</Project>
-      <Name>Assembly-CSharp</Name>
+    <ProjectReference Include="GameAssembly.csproj">
+      <Project>{0A3D2A63-8BD3-D542-0945-F16651595A66}</Project>
+      <Name>GameAssembly</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
