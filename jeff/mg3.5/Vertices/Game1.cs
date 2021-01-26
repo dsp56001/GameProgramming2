@@ -14,11 +14,11 @@ namespace Vertices
         SpriteBatch spriteBatch;
 
         VertexBuffer vertexBuffer;                              //Buffer for triangle
-        VertexDeclaration basicEffectVertexDeclaration;         //
+        VertexDeclaration basicEffectVertexDeclaration;         //https://docs.microsoft.com/en-us/windows/win32/direct3d9/mapping-fvf-codes-to-a-directx-9-declaration
 
         Matrix worldMatrix;                                     //Matrix to hold world
         Matrix viewMatrix;                                      //View is the view from the camera
-        Matrix projectionMatrix;                                //Projection is the 2D flattened view with occusion
+        Matrix projectionMatrix;                                //Projection is the 2D flattened view with occlusion
 
         BasicEffect effect;                                //ShaderEffect used to draw on video card this is a simple mongame HLSL shader
 
@@ -42,14 +42,6 @@ namespace Vertices
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
-            //Setup intial values for World Transform objects
-            rotationX = 0.0f;
-            rotationY = 0.0f;
-            orbitX = 0.0f;
-            orbitY = 0.0f;
-            worldTrans = Vector3.Zero;
-            worldScale = 1.0f;
-
             //Game components from MonogameLibrary.Util
             input = new InputHandler(this);
             gameConsole = new GameConsole(this);
@@ -67,6 +59,15 @@ namespace Vertices
         /// </summary>
         protected override void Initialize()
         {
+
+            //Setup intial values for World Transform objects
+            rotationX = 0.0f;
+            rotationY = 0.0f;
+            orbitX = 0.0f;
+            orbitY = 0.0f;
+            worldTrans = Vector3.Zero;
+            worldScale = 1.0f;
+
             // Set up the initial View Matrixes
             // camera
             viewMatrix = Matrix.CreateLookAt(new Vector3(0, -6, 5), Vector3.Zero, Vector3.Up);
@@ -250,12 +251,9 @@ namespace Vertices
             //graphics.GraphicsDevice.Vertices[0].SetSource(vertexBuffer, 0, VertexPositionColor.SizeInBytes);
             GraphicsDevice.SetVertexBuffer(vertexBuffer);
 
-
-
             // This code would go between a device
             // BeginScene-EndScene block.
             //effect.Begin();
-
 
             foreach (EffectPass pass in effect.CurrentTechnique.Passes)
             {
@@ -268,6 +266,9 @@ namespace Vertices
             base.Draw(gameTime);
         }
 
+        /// <summary>
+        /// Setup Vertices fro drawing primitives
+        /// </summary>
         private void SetUpVertices()
         {
             VertexPositionColor[] vertices = new VertexPositionColor[6];
@@ -276,8 +277,7 @@ namespace Vertices
             vertices[2] = new VertexPositionColor(new Vector3(1, -1, 0), Color.White);
             /*
              * Try to add some more vertices
-             * 
-           
+             * remember to change the 
             */
             vertices[3] = vertices[2];
             vertices[4] = new VertexPositionColor(new Vector3(3, 2, 0), Color.Green);
