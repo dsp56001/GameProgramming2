@@ -258,7 +258,7 @@ namespace Vertices
             foreach (EffectPass pass in effect.CurrentTechnique.Passes)
             {
                 pass.Apply();
-                graphics.GraphicsDevice.DrawPrimitives(PrimitiveType.TriangleList, 0, 12);
+                graphics.GraphicsDevice.DrawPrimitives(PrimitiveType.TriangleList, 0, 2);
                 //pass.End();
             }
             //effect.End();
