@@ -38,6 +38,7 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AndroidFilesSystem.cs" />
     <Compile Include="FoodManager.cs" />
     <Compile Include="FoodManagerLoadFromText.cs" />
     <Compile Include="Game1.cs" />
