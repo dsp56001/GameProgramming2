@@ -11,7 +11,7 @@ namespace ConsoleCommandWUndo.Commands
     {
         public MoveLeftCommand(): base ()
         {
-            this.CommandName = "Move Left";
+            this.CommandName = MoveCommandName.MoveLeft;
             this.UndoCommand = new UndoMoveLeftCommand(this);
         }
 

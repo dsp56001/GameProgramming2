@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleCommandWUndo.Commands;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace ConsoleCommandWUndo
 {
     public class Command : ICommand
     {
-        public string CommandName;       //Name For logging
+        public MoveCommandName CommandName;       //Name For logging
         static bool debug = false;
         public Command()
         {

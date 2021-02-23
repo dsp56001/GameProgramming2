@@ -9,7 +9,7 @@ namespace ConsoleCommandWUndo
     {
         public UndoCommand(CommandWithUndo command)
         {
-            this.CommandName = "Undo " + command.CommandName;
+            //this.CommandName = "Undo " + command.CommandName;
         }
     }
 }

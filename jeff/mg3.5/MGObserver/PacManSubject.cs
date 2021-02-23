@@ -37,7 +37,7 @@ namespace MGObserver
         {
             //don't allow IObserver only allow IPacmanObservers 
             //this is by design 
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public void Attach(IPacmanObserver o)

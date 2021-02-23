@@ -16,7 +16,7 @@ public class Player : MonoBehaviour, ICommandComponent
     private Vector3 moveTranslation;
     private Vector2 moveOnNextUpdate;
 
-    public float MoveAmount = 5f;
+    public float MoveAmount = 15f;
     
     // Use this for initialization
 	void Start () {

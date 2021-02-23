@@ -7,13 +7,16 @@ using UnityEngine;
 
 namespace ConsoleCommandWUndo.Commands
 {
+    public enum MoveCommandName {  MoveLeft, MoveRight, MoveUp, MoveDown }
+    
+    
     public class MoveRightCommand : CommandWithUndo
     {
 
         public MoveRightCommand() : base ()
         {
           
-            this.CommandName = "Move Right";
+            this.CommandName = MoveCommandName.MoveRight;
             this.UndoCommand = new UndoMoveRightCommand(this);
         }
     

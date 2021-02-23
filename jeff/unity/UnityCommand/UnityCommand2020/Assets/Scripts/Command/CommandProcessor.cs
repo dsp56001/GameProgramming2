@@ -26,8 +26,8 @@ namespace UnityCommand
         }
         public virtual void Start()
         {
-            keyMap = new KeyMapReleaseMove();
-            //keyMap = new KeyMapDownMove();
+            //keyMap = new KeyMapReleaseMove();
+            keyMap = new KeyMapDownMove();
             Commands.Clear();
         }
 
@@ -100,6 +100,8 @@ namespace UnityCommand
                 {
                     Commands.Push((ICommandWithUndo)command); //only push commands with undo to the stack
                 }
+                
+                //execute right
                 command.Execute(MoveCommandTarget);
             }
         }
