@@ -30,8 +30,9 @@ namespace MGDecorator
 
         public override void Update(GameTime gameTime)
         {
-            sineTime += gameTime.ElapsedGameTime.Milliseconds;
-            this.scaleMultiplier = this.scaleMultiplier + (float)Math.Cos(sineTime);
+            
+            float pulsate = (float)Math.Sin(gameTime.TotalGameTime.TotalSeconds * 6) + 1;
+            this.scaleMultiplier = 1 + pulsate * 0.1f;
             //console.Log("sineTime", sineTime.ToString());
             //console.Log("scaleMultiplier", scaleMultiplier.ToString());
             base.Update(gameTime);

@@ -7,7 +7,7 @@ namespace DecoratorSample
     public interface IMathComponentDecoratorNode : IMathComponent
     {
         IMathComponentDecoratorNode Child { get; set; }
-        void AddComponent(IMathComponentDecoratorNode compenent);
+        void AddComponent(IMathComponentDecoratorNode component);
         void RemoveComponent(IMathComponentDecoratorNode compenent);
 
     }
@@ -25,7 +25,7 @@ namespace DecoratorSample
            
             if(this is MathComponentDecoratorNodeEmpty)
             {
-                //leave th child null
+                //leave the child null
             }
             else
             {
