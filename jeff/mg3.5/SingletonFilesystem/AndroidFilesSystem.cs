@@ -11,7 +11,7 @@ namespace SingletonFilesystem
     {
         public override void CreateTextFile(string fileName, string fileContents)
         {
-            System.IO
+            
             //base.CreateTextFile(fileName, fileContents);
         }
 

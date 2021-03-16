@@ -85,7 +85,7 @@ namespace Screenz
             {
                 //just set enabled to false;
                 this.Enabled = false;
-                pacMan.Enabled = false;
+                pacMan.Enabled = true;
                 ghost.Enabled = false;
             }
             else if (GameManager.State != this.Value)

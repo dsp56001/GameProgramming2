@@ -37,7 +37,7 @@ namespace MGScreenStrategy.GameStates
             this.BackGrongColor = Color.DarkRed;
             this.TextColor = Color.BlanchedAlmond;
 
-            helpDialog = new HelpDiaglogState(game, manager, "help");   
+            //helpDialog = new HelpDiaglogState(game, manager, "help");   
         }
 
 

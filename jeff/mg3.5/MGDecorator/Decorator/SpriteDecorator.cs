@@ -94,6 +94,7 @@ namespace MGDecorator.Decorator
             }
             decorator.Update(gameTime);
         }
+
         public override void Draw(GameTime gameTime)
         {
             if (decorator is EmptySpriteDecorator)
