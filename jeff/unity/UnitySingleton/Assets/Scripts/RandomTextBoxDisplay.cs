@@ -12,6 +12,7 @@ public class RandomTextBoxDisplay : MonoBehaviour
     public Text text;
     public UnityAction UpdateAction;
 
+
     [SerializeField]
     private int randSingle;
 

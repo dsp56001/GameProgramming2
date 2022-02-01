@@ -37,7 +37,7 @@ public class RandomSingle : Singleton<RandomSingle>
         //Right
         RandomSingle.Instance.Rand = Random.Range(0, 10);
 
-        UpdateRandomWrong();
+        //UpdateRandomWrong();
     }
 
     public void UpdateRandomWrong()
