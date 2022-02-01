@@ -21,8 +21,14 @@ namespace MonoGameLibrary.GameFiles
                 get
                 {
                     if (_filesystem == null)
+                    {
                         _filesystem = new FileSystem();
-                    return _filesystem;
+                    }
+                //system checks
+#if ANDROID
+                    _filesystem = new AndroidFileSystem();    
+#endif
+                return _filesystem;
                 }
             }
 
