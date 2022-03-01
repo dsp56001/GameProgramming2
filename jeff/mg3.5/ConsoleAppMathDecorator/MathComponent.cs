@@ -12,8 +12,6 @@ namespace DecoratorSample
 
     public abstract class MathComponent : IMathComponent
     {   
-        
-        
         public virtual int Calculate()
         {
             return 0;

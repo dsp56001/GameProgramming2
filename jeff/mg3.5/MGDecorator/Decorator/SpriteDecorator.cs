@@ -19,6 +19,7 @@ namespace MGDecorator.Decorator
     public abstract class SpriteDecorator : DrawableGameComponent, ISpriteDecorator
     {
         public SpriteDecorator decorator;
+        object _lock;
         
         public SpriteDecorator(Game game) : base(game)
         {
@@ -26,7 +27,7 @@ namespace MGDecorator.Decorator
                 this.decorator = null; //Hack maybeit better to just use null object pattern
             else
                 decorator = new EmptySpriteDecorator(game);
-            
+            _lock = new object();
         }
 
         public override void Initialize()
@@ -41,34 +42,40 @@ namespace MGDecorator.Decorator
 
         internal virtual void AddDecorator(SpriteDecorator spriteDecorator)
         {
-            if (this.decorator is EmptySpriteDecorator)
+            lock (_lock)
             {
-                this.decorator = spriteDecorator;
-                //this.decorator.Initialize();
-            }
-            else
-            {
-                this.decorator.AddDecorator(spriteDecorator);
+                if (this.decorator is EmptySpriteDecorator)
+                {
+                    this.decorator = spriteDecorator;
+                    //this.decorator.Initialize();
+                }
+                else
+                {
+                    this.decorator.AddDecorator(spriteDecorator);
+                }
             }
         }
 
         internal virtual void RemoveDecorator(SpriteDecorator spriteDecorator)
         {
-            if(this.decorator is EmptySpriteDecorator)
+            lock (_lock)
             {
-                //nothing
-            }
-            else
-            {
-                if(this.decorator.GetType() == spriteDecorator.GetType())
+                if (this.decorator is EmptySpriteDecorator)
                 {
-                    this.decorator = this.decorator.decorator;
+                    //nothing
                 }
                 else
                 {
-                    this.decorator.RemoveDecorator(spriteDecorator);
+                    if (this.decorator.GetType() == spriteDecorator.GetType())
+                    {
+                        this.decorator = this.decorator.decorator;
+                    }
+                    else
+                    {
+                        this.decorator.RemoveDecorator(spriteDecorator);
+                    }
+
                 }
-                
             }
         }
 
@@ -87,12 +94,16 @@ namespace MGDecorator.Decorator
 
         public override void Update(GameTime gameTime)
         {
-            base.Update(gameTime);
-            if (decorator is EmptySpriteDecorator)
+            lock (_lock)
             {
-                return; //end nothing else to do
+                if (decorator is EmptySpriteDecorator)
+                {
+                    base.Update(gameTime);
+                    return; //end nothing else to do
+                }
+                decorator.Update(gameTime);
             }
-            decorator.Update(gameTime);
+            base.Update(gameTime);
         }
 
         public override void Draw(GameTime gameTime)
