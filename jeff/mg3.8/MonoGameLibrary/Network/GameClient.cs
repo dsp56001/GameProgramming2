@@ -84,7 +84,8 @@ namespace MonoGameLibrary.Network.Client
                 }
                 catch (Exception e)
                 {
-                    throw e;
+                    Console.Write(e.ToString());
+                    throw new Exception("Error");
                 }
             }
         }
@@ -107,7 +108,8 @@ namespace MonoGameLibrary.Network.Client
                 }
                 catch (Exception e)
                 {
-                    throw e;
+                    Console.Write(e.ToString());
+                    throw new Exception("Error");
                 }
             }
         }
@@ -125,7 +127,8 @@ namespace MonoGameLibrary.Network.Client
             }
             catch (Exception e)
             {
-                throw e;
+                Console.Write(e.ToString());
+                throw new Exception("Error");
             }
         }
 
@@ -145,7 +148,8 @@ namespace MonoGameLibrary.Network.Client
             }
             catch (Exception e)
             {
-                throw e;
+                Console.Write(e.ToString());
+                throw new Exception("Error");
             }
         }
 
@@ -159,7 +163,8 @@ namespace MonoGameLibrary.Network.Client
             }
             catch (Exception e)
             {
-                throw e;
+                Console.Write(e.ToString());
+                throw new Exception("Error");
             }
         }
 
@@ -177,7 +182,8 @@ namespace MonoGameLibrary.Network.Client
             }
             catch (Exception e)
             {
-                throw e;
+                Console.Write(e.ToString());
+                throw new Exception("Error");
             }
         }
     }

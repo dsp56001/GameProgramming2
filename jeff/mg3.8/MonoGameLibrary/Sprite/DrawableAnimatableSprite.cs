@@ -100,7 +100,8 @@ namespace MonoGameLibrary.Sprite
             }
             catch (Exception ex)
             {
-                throw ex;
+                Console.WriteLine(ex.ToString());
+                throw new Exception("Error!");
             }
         }
 
