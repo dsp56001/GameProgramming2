@@ -43,8 +43,10 @@ namespace ConsoleCommandWUndo
         {
             if (command != null)
             {
+                //Do the command bits
                 if (command is ICommandWithUndo)
                 {
+                    //only push undoable commands
                     Commands.Push((ICommandWithUndo)command); //only push commands with undo to the stack
                 }
                 command.Execute(FakeComponentReceiver);
@@ -88,6 +90,7 @@ namespace ConsoleCommandWUndo
                         if (command is ICommandWithUndo) //if the popped command has an undo command use it
                         {
                             command = ((ICommandWithUndo)command).UndoCommand;
+                             
                         }
                     }
                     break;

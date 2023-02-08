@@ -280,7 +280,7 @@ namespace Vertices
              * remember to change the 
             */
             vertices[3] = vertices[2];
-            vertices[4] = new VertexPositionColor(new Vector3(3, 2, 0), Color.Green);
+            vertices[4] = new VertexPositionColor(new Vector3(3, 2, 5), Color.Green);
             vertices[5] = vertices[0];
 
             //vertexBuffer = new VertexBuffer(this.graphics.GraphicsDevice, 
@@ -301,6 +301,7 @@ namespace Vertices
             //basicEffect = new BasicEffect(graphics.GraphicsDevice, null);
             effect = new BasicEffect(GraphicsDevice);
             effect.Alpha = 1.0f;
+            
             effect.VertexColorEnabled = true;
         }
     }

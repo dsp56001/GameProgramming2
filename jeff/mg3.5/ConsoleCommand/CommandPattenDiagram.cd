@@ -3,7 +3,7 @@
   <Class Name="ConsoleCommand.GameComponent">
     <Position X="1" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAAEAAAAAAAAAAAAAAAAIQAAAAAAAYAA=</HashCode>
+      <HashCode>AAEAAAAAIAAAAAEAAAAAAAAAAAQAAAAIQAAAAAAAYAA=</HashCode>
       <FileName>GameComponent.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -51,7 +51,7 @@
     </TypeIdentifier>
   </Class>
   <Interface Name="ConsoleCommand.ICommand">
-    <Position X="3.75" Y="0.5" Width="2.5" />
+    <Position X="6" Y="0.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ICommand.cs</FileName>
