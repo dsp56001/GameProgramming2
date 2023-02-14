@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MGCommandContinuous", "MGCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonFilesystem", "SingletonFilesystem\SingletonFilesystem.csproj", "{B295F5D5-7B8F-4650-B5F7-EB7251CE14F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplicationSingleton", "ConsoleApplicationSingleton\ConsoleApplicationSingleton.csproj", "{D73E1584-4CDE-41CF-9602-40C3E1AD406D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{B295F5D5-7B8F-4650-B5F7-EB7251CE14F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B295F5D5-7B8F-4650-B5F7-EB7251CE14F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B295F5D5-7B8F-4650-B5F7-EB7251CE14F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D73E1584-4CDE-41CF-9602-40C3E1AD406D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D73E1584-4CDE-41CF-9602-40C3E1AD406D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D73E1584-4CDE-41CF-9602-40C3E1AD406D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D73E1584-4CDE-41CF-9602-40C3E1AD406D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,6 +90,7 @@ Global
 		{04E7F948-E677-4A72-A665-FA685C5ABC0E} = {B20ADEB9-AB0A-44DA-9D0B-349D67874A1A}
 		{C0F74D63-0B8F-41DA-BD31-96A91F535979} = {6851A87C-063F-4FF5-9CE6-8431FE54965B}
 		{F73B19F2-49B4-4D33-AE02-B224DDA3CB2E} = {6851A87C-063F-4FF5-9CE6-8431FE54965B}
+		{D73E1584-4CDE-41CF-9602-40C3E1AD406D} = {6851A87C-063F-4FF5-9CE6-8431FE54965B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A3C0E3E8-F7C5-46A0-904A-E0D08B8BEE15}
