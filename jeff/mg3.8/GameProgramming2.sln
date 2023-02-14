@@ -19,6 +19,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MGPacManComponents", "MGPac
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PacManComponentsSimple", "PacManComponentsSimple\PacManComponentsSimple.csproj", "{515642E4-9DDC-48CD-81C1-826837F70F30}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleCommand", "ConsoleCommand\ConsoleCommand.csproj", "{F73B19F2-49B4-4D33-AE02-B224DDA3CB2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MGAudioWCommandSingleton", "MGAudioWCommandSingleton\MGAudioWCommandSingleton.csproj", "{2B9C190C-B98B-4475-9C3B-C1D835757100}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MGCommand", "MGCommand\MGCommand.csproj", "{CFB3D6EC-D1F1-4746-ABDA-F660ADC66E96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MGCommandContinuous", "MGCommandContinuous\MGCommandContinuous.csproj", "{BAEB4B1C-CAB2-4FD5-AC2F-0C22F4F4ECE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonFilesystem", "SingletonFilesystem\SingletonFilesystem.csproj", "{B295F5D5-7B8F-4650-B5F7-EB7251CE14F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +55,26 @@ Global
 		{515642E4-9DDC-48CD-81C1-826837F70F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{515642E4-9DDC-48CD-81C1-826837F70F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{515642E4-9DDC-48CD-81C1-826837F70F30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F73B19F2-49B4-4D33-AE02-B224DDA3CB2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F73B19F2-49B4-4D33-AE02-B224DDA3CB2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F73B19F2-49B4-4D33-AE02-B224DDA3CB2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F73B19F2-49B4-4D33-AE02-B224DDA3CB2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B9C190C-B98B-4475-9C3B-C1D835757100}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B9C190C-B98B-4475-9C3B-C1D835757100}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B9C190C-B98B-4475-9C3B-C1D835757100}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B9C190C-B98B-4475-9C3B-C1D835757100}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFB3D6EC-D1F1-4746-ABDA-F660ADC66E96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFB3D6EC-D1F1-4746-ABDA-F660ADC66E96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFB3D6EC-D1F1-4746-ABDA-F660ADC66E96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFB3D6EC-D1F1-4746-ABDA-F660ADC66E96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAEB4B1C-CAB2-4FD5-AC2F-0C22F4F4ECE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAEB4B1C-CAB2-4FD5-AC2F-0C22F4F4ECE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAEB4B1C-CAB2-4FD5-AC2F-0C22F4F4ECE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAEB4B1C-CAB2-4FD5-AC2F-0C22F4F4ECE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B295F5D5-7B8F-4650-B5F7-EB7251CE14F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B295F5D5-7B8F-4650-B5F7-EB7251CE14F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B295F5D5-7B8F-4650-B5F7-EB7251CE14F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B295F5D5-7B8F-4650-B5F7-EB7251CE14F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +83,7 @@ Global
 		{AE5C96E0-1B1B-4746-9FFA-4FB05010DAD9} = {B20ADEB9-AB0A-44DA-9D0B-349D67874A1A}
 		{04E7F948-E677-4A72-A665-FA685C5ABC0E} = {B20ADEB9-AB0A-44DA-9D0B-349D67874A1A}
 		{C0F74D63-0B8F-41DA-BD31-96A91F535979} = {6851A87C-063F-4FF5-9CE6-8431FE54965B}
+		{F73B19F2-49B4-4D33-AE02-B224DDA3CB2E} = {6851A87C-063F-4FF5-9CE6-8431FE54965B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A3C0E3E8-F7C5-46A0-904A-E0D08B8BEE15}
