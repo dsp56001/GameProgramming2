@@ -16,8 +16,6 @@ namespace MGDecorator
         DropShadowDecorator smallDrop;
         DropShadowDecorator bigDrop;
 
-        GameConsole console;
-
         public DecoDemoPacMan(Game game) : base(game)
         {
             scaleDeco = new ScaleDecorator(game, this, 2);

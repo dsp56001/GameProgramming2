@@ -9,7 +9,11 @@ namespace MGPacManComponents.Pac
 {
     public class GameConsolePacMan : PacMan
     {
-        GameConsole console;
+        public GameConsole console;
+        
+        
+
+        
         public GameConsolePacMan()
         {
             this.console = null;
@@ -17,6 +21,7 @@ namespace MGPacManComponents.Pac
 
         public GameConsolePacMan(GameConsole console)
         {
+            
             this.console = console;
         }
 

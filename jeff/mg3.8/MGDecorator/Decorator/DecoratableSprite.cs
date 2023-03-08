@@ -11,7 +11,8 @@ namespace MGDecorator.Decorator
     class DecoratableSprite : DrawableSprite
     {
 
-        SpriteDecorator decorator;
+        protected SpriteDecorator decorator;
+        protected int decoratorCount;
 
         public DecoratableSprite(Game game) : base(game)
         {
@@ -24,12 +25,12 @@ namespace MGDecorator.Decorator
             {
                 this.decorator = spriteDecorator;
                 
-                
             }
             else
             {
                 this.decorator.AddDecorator(spriteDecorator);
             }
+            decoratorCount++; 
         }
 
         public virtual void RemoveDecorator(SpriteDecorator spriteDecorator)
@@ -48,8 +49,10 @@ namespace MGDecorator.Decorator
                 {
                     this.decorator.RemoveDecorator(spriteDecorator);
                 }
+                decoratorCount--;
 
             }
+
         }
 
         public virtual bool HasDecorator(SpriteDecorator spriteDecorator)

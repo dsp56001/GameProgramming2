@@ -8,6 +8,7 @@ using MonoGameLibrary.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,6 +17,7 @@ namespace MGDecorator
     class DecoMonogamePacMan : DecoratableSprite
     {
         protected PlayerController controller { get; private set; }
+        protected GameConsole console;
         internal GameConsolePacMan PacMan
         {
             get;
@@ -48,6 +50,12 @@ namespace MGDecorator
             : base(game)
         {
             this.controller = new PlayerController(game);
+            this.console = (GameConsole)game.Services.GetService<IGameConsole>();
+            if(this.console == null)
+            {
+                this.console = new GameConsole(game);
+                this.Game.Components.Add(this.console);
+            }
             PacMan = new GameConsolePacMan((GameConsole)game.Services.GetService<IGameConsole>());
         }
 
@@ -69,9 +77,21 @@ namespace MGDecorator
 
             UpdateKeepPacManOnScreen();
 
+            DecoratorDebug(this.decorator);
+            
 
 
             base.Update(gameTime);
+        }
+
+        private void DecoratorDebug(SpriteDecorator decorator)
+        {
+            this.PacMan.console.DebugTextOutput["Deco" + this.decoratorCount] = decorator.ToString();
+            if (!(decorator is EmptySpriteDecorator))
+            {
+
+            }
+                
         }
 
         public virtual void Die()
