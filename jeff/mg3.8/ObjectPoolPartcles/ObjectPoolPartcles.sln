@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectPoolPartcles", "ObjectPoolPartcles.csproj", "{C79378B6-46B5-4CC8-8838-0E5C9E91DA9D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C79378B6-46B5-4CC8-8838-0E5C9E91DA9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C79378B6-46B5-4CC8-8838-0E5C9E91DA9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C79378B6-46B5-4CC8-8838-0E5C9E91DA9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C79378B6-46B5-4CC8-8838-0E5C9E91DA9D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D94A0D2A-4B69-4AA2-B6CC-7CF131D007E2}
+	EndGlobalSection
+EndGlobal
