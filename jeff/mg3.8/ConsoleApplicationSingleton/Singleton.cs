@@ -9,7 +9,7 @@ namespace ConsoleApplicationSingleton
     public class Singleton
     {
         //Private Static instance
-        private static Singleton instance;
+        private static Singleton? instance;
 
         //Private or Procted Constructor
         protected Singleton() { }
@@ -20,10 +20,11 @@ namespace ConsoleApplicationSingleton
             get
             {
                 //Lazy Load
-                if (instance == null)
+                if (instance != null)
                 {
-                    instance = new Singleton();
+                    return instance;
                 }
+                instance = new Singleton();
                 return instance;
             }
         }

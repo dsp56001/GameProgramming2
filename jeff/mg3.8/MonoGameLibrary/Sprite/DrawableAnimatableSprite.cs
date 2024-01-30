@@ -148,7 +148,8 @@ namespace MonoGameLibrary.Sprite
 
     public class SpriteAnimationAdapter
     {
-        List<SpriteAnimation> spriteAnimations;
+        readonly List<SpriteAnimation> spriteAnimations;
+        protected bool initialized;
         protected SpriteAnimation currentAnimation;
         protected CelAnimationManager celAnimationManger;
 
@@ -247,10 +248,12 @@ namespace MonoGameLibrary.Sprite
             this.celAnimationManger.ToggleAnimation(s.AnimationName, true);
         }
 
+        /*
         public void GotToFrame(SpriteAnimation s, int frame)
         {
             //TODO
         }
+        */
 
         public void ResumeAmination(SpriteAnimation s)
         {
@@ -284,7 +287,7 @@ namespace MonoGameLibrary.Sprite
 
         internal void Initialize()
         {
-            //throw new NotImplementedException();
+            if(!initialized) this.initialized = true;
         }
     }
 

@@ -10,15 +10,25 @@ using System.Threading.Tasks;
 
 namespace MGPacManComponents.Food
 {
+    public delegate void FoodHitEventHandler(object sender, EventArgs e);
 
-   
+    public enum FoodState { Normal, Activating, Activated, Eaten }
 
     public class Food : DrawableSprite
     {
-        InputHandler input;
-        GameConsole console;
+        readonly InputHandler input;
+        protected GameConsole console;
 
-        public static int EatenCount = 0; 
+        private static int eatenCount;
+
+        protected FoodState state;
+        public FoodState State
+        {
+            protected set { state = value; }
+            get { return state; }
+        }
+
+        public static int EatenCount { get => eatenCount; set => eatenCount = value; }
 
         public Food(Game game)
             : base(game)
@@ -38,8 +48,6 @@ namespace MGPacManComponents.Food
             }
         }
 
-       
-
         public override void Initialize()
         {
             base.Initialize();
@@ -47,11 +55,11 @@ namespace MGPacManComponents.Food
 
         public virtual void Hit()
         {
-            this.Visible = false;
-            this.Enabled = false;
+            if(this.State == FoodState.Normal)
+            {
+                this.State = FoodState.Activated;
+            }
             
-            EatenCount++;           //Add 1 to static counter
-            console.GameConsoleWrite(string.Format("FoodHit: EatenCount{0}", EatenCount));
         }
 
         protected override void LoadContent()
@@ -70,9 +78,37 @@ namespace MGPacManComponents.Food
         public override void Update(GameTime gameTime)
         {
             // TODO: Add your update code here
+            switch(state)
+            {
+                case FoodState.Normal:
+                    this.Visible = true;
+                    this.Enabled = true;
+                    break;
+                case FoodState.Activating:
+                    FoodActivating();
+                    break;
+                case FoodState.Activated:
+                    FoodActivated();
+                    break;
+                case FoodState.Eaten:
+                    this.Visible = false;
+                    this.Enabled = false; ;
 
+                    break;
+            }
             base.Update(gameTime);
         }
 
+        protected virtual void FoodActivating()
+        {
+            this.FoodActivated();
+        }
+
+        protected virtual void FoodActivated()
+        {
+            EatenCount++;           //Add 1 to static counter
+            console.GameConsoleWrite(string.Format("FoodHit: EatenCount{0}", EatenCount));
+            this.State = FoodState.Eaten;
+        }
     }
 }
