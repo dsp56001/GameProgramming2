@@ -45,9 +45,9 @@ namespace WebApplicationGMWeb
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.MapControllerRoute(
-                 name: "ghost",
-                 pattern: "{controller=ghost}");
+                //endpoints.MapControllerRoute(
+                // name: "ghost",
+                // pattern: "{controller=ghost}");
 
             });
         }
